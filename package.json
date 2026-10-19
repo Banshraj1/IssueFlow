@@ -1,0 +1,13 @@
+{
+  "name": "issueflow",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend",
+    "test": "npm test -w backend",
+    "seed:admin": "npm run seed:admin -w backend"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
